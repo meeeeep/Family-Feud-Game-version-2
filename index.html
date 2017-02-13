@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Family Feud Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+
+   </head>
+   <body>
+        <FORM id="Form1" method="post" runat="server">
+            <br/>
+            <div style="text-align: center; color:#0000FF">
+                <img src="FamilyFeudLogo.jpg" alt="Family Feud Logo" width="400" height="200" onclick="NextQuestion();">
+            </div>
+            <br/><br/><br/><br/>
+            <div style="align: center; color:#0000FF">
+                <table align="center" width="100%">
+                    <tr>
+                        <td style="padding-left: 5px; width: 25%;">
+                            <div class="columns">
+                              <ul class="family">
+                                <li class="header">THE WEST FAMILY</li>
+                                <li>ROUND 1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="calculatedtotal" name="WestRound1Total" id="WestRound1Total" value="0"></li>
+                                <li>ROUND 2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="calculatedtotal" name="WestRound2Total" id="WestRound2Total" value="0"></li>
+                                <li>ROUND 3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="calculatedtotal" name="WestRound3Total" id="WestRound3Total" value="0"></li>
+                                <li class="grandtotal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOTAL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="calculatedtotal" name="WestGrandTotal" id="WestGrandTotal"  value="0"></li>
+                              </ul>
+                            <br/><br/>
+                              <ul class="family">
+                                <li>
+                                    <input type="text" name="WestAnswer" id="WestAnswer">
+                                    <!--<textarea rows="1" cols="20">technologies.</textarea>-->
+                                </li>
+                                <li class="familyanswer">
+                                    <input type="submit" class="button" value="SUBMIT WEST ANSWER"  name="WestSubmit" id="WestSubmit"  onclick="SubmitAnswer('West'); return false;">
+                                    <!--<a href="#" class="button">SUBMIT WEST ANSWER</a>-->
+                                </li>
+                              </ul>
+                            </div>
+                        </td>
+                        <td style="padding-left: 15px; padding-right: 15px;"></td>
+                        <td valign="top">
+<div  class="family" id="Question1" name="Question1"  style="visibility:hidden; display:none; padding-left: 5px; padding-right: 5px;">
+                            <table>
+                                <tr>
+                                    <td colspan="2" style="text-color: black; font-size: 20px; color: black; text-align: center;">Name the 7 most nutritious fruits?<br/><br/></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q1A1Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Oranges</div></td>
+                                    <td><div id="Q1A1Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">80</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q1A2Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Pomegranates</div></td>
+                                    <td> <div id="Q1A2Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">60</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q1A3Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Apples</div></td>
+                                    <td> <div id="Q1A3Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">50</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q1A4Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Avocados</div></td>
+                                    <td> <div id="Q1A4Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">40</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q1A5Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Blueberries</div></td>
+                                    <td> <div id="Q1A5Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">30</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q1A6Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Strawberries</div></td>
+                                    <td> <div id="Q1A6Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">20</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q1A7Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Bananas</div></td>
+                                    <td> <div id="Q1A7Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">10</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q1TotalText" style="visibility: visible; display: block; color: white; background-color: black; border-color: black; border-style: solid; padding-left: 5px; height: 30px; text-align: left;">GRAND TOTAL:</div></td>
+                                    <td> <div id="Q1GrandTotal" style="visibility: visible; display: block; color: white; background-color:  black; border-color: black; border-style: solid; padding-left: 5px; height: 30px; text-align: center;">290</div></td>
+                                </tr>
+                            </table>
+</div>
+<div  class="family" id="Question2" name="Question2"  style="visibility:hidden; display:none; padding-left: 5px; padding-right: 5px;">
+                            <table>
+                                <tr>
+                                    <td colspan="2" style="text-color: black; font-size: 20px; color: black; text-align: center;">What are the 5 largest cities in the USA?<br/><br/></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q2A1Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">New York</div></td>
+                                    <td><div id="Q2A1Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">125</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q2A2Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Los Angeles</div></td>
+                                    <td> <div id="Q2A2Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">100</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q2A3Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Chicago</div></td>
+                                    <td> <div id="Q2A3Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">50</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q2A4Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Houston</div></td>
+                                    <td> <div id="Q2A4Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">25</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q2A5Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Phoenix</div></td>
+                                    <td> <div id="Q2A5Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">10</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q2TotalText" style="visibility: visible; display: block; color: white; background-color: black; border-color: black; border-style: solid; padding-left: 5px; height: 30px; text-align: left;">GRAND TOTAL:</div></td>
+                                    <td> <div id="Q2GrandTotal" style="visibility: visible; display: block; color: white; background-color:  black; border-color: black; border-style: solid; padding-left: 5px; height: 30px; text-align: center;">310</div></td>
+                                </tr>
+                            </table>
+</div>
+<div  class="family" id="Question3" name="Question3"  style="visibility:hidden; display:none; padding-left: 5px; padding-right: 5px;">
+                            <table>
+                                <tr>
+                                    <td colspan="2" style="text-color: black; font-size: 20px; color: black; text-align: center;">What are the 4 most popular dog breeds in the USA?<br/><br/></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q3A1Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">German Shepherd</div></td>
+                                    <td><div id="Q3A1Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">250</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q3A2Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Golden Retriever</div></td>
+                                    <td> <div id="Q3A2Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">175</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q3A3Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Beagle</div></td>
+                                    <td> <div id="Q3A3Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">100</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q3A4Text" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px;">Bulldog</div></td>
+                                    <td> <div id="Q3A4Total" style="visibility: visible; display: block; color: black; background-color: black; border-color: red; border-style: double; padding-left: 5px; height: 30px; text-align: center;">50</div></td>
+                                </tr>
+                                <tr>
+                                    <td><div id="Q3TotalText" style="visibility: visible; display: block; color: white; background-color: black; border-color: black; border-style: solid; padding-left: 5px; height: 30px; text-align: left;">GRAND TOTAL:</div></td>
+                                    <td> <div id="Q3GrandTotal" style="visibility: visible; display: block; color: white; background-color:  black; border-color: black; border-style: solid; padding-left: 5px; height: 30px; text-align: center;">400</div></td>
+                                </tr>
+                            </table>
+</div>
+                        </td>
+                        <td style="padding-left: 15px; padding-right: 15px;"></td>
+                        <td style="padding-left: 5px; width: 25%;">
+                            <div class="columns">
+                              <ul class="family">
+                                <li class="header">THE EAST FAMILY</li>
+                                <li>ROUND 1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="calculatedtotal" name="EastRound1Total" id="EastRound1Total" value="0"></li>
+                                <li>ROUND 2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="calculatedtotal" name="EastRound2Total" id="EastRound2Total" value="0"></li>
+                                <li>ROUND 3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="calculatedtotal" name="EastRound3Total" id="EastRound3Total" value="0"></li>
+                                <li class="grandtotal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOTAL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="calculatedtotal" name="EastGrandTotal" id="EastGrandTotal" value="0"></li>
+                              </ul>
+                            <br/><br/>
+                              <ul class="family">
+                                <li>
+                                    <input type="text" name="EastAnswer" id="EastAnswer">
+                                    <!--<textarea rows="1" cols="20">techno.</textarea>-->
+                                </li>
+                                <li class="familyanswer">
+                                    <input type="submit" class="button" value="SUBMIT EAST ANSWER"  name="EastSubmit" id="EastSubmit" onclick="SubmitAnswer('East'); return false;">
+                                    <!--<a href="#" class="button">SUBMIT EAST ANSWER</a>-->
+                                </li>
+                              </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 15px; width: 25%;">
+                           <img id="WestIncorrect" src="incorrect_blank.jpg" style="visibility:hidden; display:none; width="50" height="100"">
+                        </td>
+                        <td style="padding-left: 15px; padding-right: 15px;"></td>
+                        <td></td>
+                        <td style="padding-left: 15px; padding-right: 15px;"></td>
+                        <td style="padding-right: 15px; width: 25%;">
+                           <img id="EastIncorrect" src="incorrect_blank.jpg" style="visibility:hidden; display:none; width="50" height="100"">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br/><br/>
+        </FORM>
+    </body>
+    <script src="app.js" charset="utf-8"></script>
+</html>
